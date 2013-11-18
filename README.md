@@ -1,2 +1,6 @@
 CallStack
 =========
+
+build
+
+ndk-build
