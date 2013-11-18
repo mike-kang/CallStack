@@ -32,10 +32,9 @@ void CallStack::dump()
 {
 	size_t numEntries = get_backtrace(backtrace, BACKTRACE_SIZE);
 	
-	for(int i=0; i< numEntries; i++){
+	for(size_t i=0; i< numEntries; i++){
 		intptr_t p = rewind_pc_arch(backtrace[i]);
 		mapinfo* mi = find_map_info(p);
-		intptr_t start_addr = mi->start;
 		
 		__android_log_print(ANDROID_LOG_INFO, LOG_TAG,"%s: 0x%x", mi->name, p - mi->start);
 	}
